@@ -9,7 +9,7 @@ module.exports = {
 
       res.status(200).json({
         message: "videos fetched",
-        result: videos,
+        videos,
       })
     } catch (error) {
       res.status(500).json({ message: error.message })

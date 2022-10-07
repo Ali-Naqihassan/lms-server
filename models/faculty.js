@@ -22,6 +22,7 @@ const facultySchema = new Schema({
   },
   gender: {
     type: String,
+    required: true,
   },
   designation: {
     type: String,
@@ -33,9 +34,11 @@ const facultySchema = new Schema({
   },
   facultyMobileNumber: {
     type: Number,
+    required: true,
   },
   cnic: {
     type: Number,
+    required: true,
   },
   dob: {
     type: String,
