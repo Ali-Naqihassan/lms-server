@@ -24,8 +24,8 @@ const {
 router.post("/login", facultyLogin)
 router.get("/get/course", facultyGetCourses)
 router.post("/create/course", facultyCreateCourse)
-router.post("/upload/video", uploadVideo)
-router.get("/get/videos", facultyGetVideos)
+router.post("/upload/video/:id", uploadVideo)
+router.get("/get/videos/:id", facultyGetVideos)
 router.post("/forgotPassword", forgotPassword)
 
 router.post("/postOTP", postOTP)

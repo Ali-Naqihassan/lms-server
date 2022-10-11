@@ -29,6 +29,7 @@ const validateForgotPassword = require("../validation/forgotPassword")
 const validateOTP = require("../validation/otpValidation")
 const validateFacultyUploadMarks = require("../validation/facultyUploadMarks")
 const message = require("../models/message")
+const Mongoose = require("mongoose")
 
 module.exports = {
   facultyLogin: async (req, res, next) => {
@@ -358,12 +359,14 @@ module.exports = {
     }
   },
   uploadVideo: async (req, res) => {
+    const { videoUrl } = req.body
     try {
       res.status(201).json({
         message: "course created ",
-        result: await Video.create(req.body),
+        result: await Video.create({ videoUrl, courseId: req.params.id }),
       })
     } catch (error) {
+      console.log(error.message)
       res.status(500).json({ message: error.message })
     }
   },

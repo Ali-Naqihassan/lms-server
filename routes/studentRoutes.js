@@ -24,7 +24,7 @@ const {
   studentGetVideos,
 } = require("../controller/studentController")
 
-router.get("/get/videos", studentGetVideos)
+router.get("/get/videos/:id", studentGetVideos)
 router.post("/login", studentLogin)
 
 router.get("/get/course", studentGetCourses)

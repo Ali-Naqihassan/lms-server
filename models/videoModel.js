@@ -1,7 +1,7 @@
 const { Schema, model } = require("mongoose")
 
 const videoSchema = new Schema({
-  courseid: {
+  courseId: {
     type: Schema.Types.ObjectId,
     ref: "course",
   },
